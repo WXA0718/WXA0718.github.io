@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィットレ - 食事情報登録</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">フィットレ</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">ホーム</a></li>
+                <li><a href="{{ url_for('index') }}#mypage">マイページ</a></li>
+                <li><a href="{{ url_for('login_page') }}">ログアウト</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="main-content">
+            <h1>食事情報登録</h1>
+                <form class="meal-form" method="post" action="{{ url_for('save') }}">
+                    <h2>朝食</h2>
+                    <div class="form-group">
+                        <label for="date-input">登録日:</label>
+                        <input type="date" id="breakfast-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="breakfast-description">食品名:</label>
+                        <input type="text" id="breakfast-description" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="breakfast-calories">カロリー:</label>
+                        <input type="text" id="breakfast-calories" name="calories" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="breakfast-protein">タンパク質:</label>
+                        <input type="text" id="breakfast-protein" name="protein" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="breakfast-fat">脂質:</label>
+                        <input type="text" id="breakfast-fat" name="fat" required>
+                    </div>
+                    <input type="hidden" name="mealType" value="breakfast">
+                    <button type="submit" class="btn-primary">登録</button>
+                </form>
+        
+                <form class="meal-form" method="post" action="{{ url_for('save') }}">
+                    <h2>昼食</h2>
+                    <div class="form-group">
+                        <label for="date-input">登録日:</label>
+                        <input type="date" id="lunch-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lunch-description">食品名:</label>
+                        <input type="text" id="lunch-description" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lunch-calories">カロリー:</label>
+                        <input type="text" id="lunch-calories" name="calories" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lunch-protein">タンパク質:</label>
+                        <input type="text" id="lunch-protein" name="protein" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lunch-fat">脂質:</label>
+                        <input type="text" id="lunch-fat" name="fat" required>
+                    </div>
+                    <input type="hidden" name="mealType" value="lunch">
+                    <button type="submit" class="btn-primary">登録</button>
+                </form>
+        
+                <form class="meal-form" method="post" action="{{ url_for('save') }}">
+                    <h2>夕食</h2>
+                    <div class="form-group">
+                        <label for="date-input">登録日:</label>
+                        <input type="date" id="dinner-date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dinner-description">食品名:</label>
+                        <input type="text" id="dinner-description" name="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dinner-calories">カロリー:</label>
+                        <input type="text" id="dinner-calories" name="calories" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dinner-protein">タンパク質:</label>
+                        <input type="text" id="dinner-protein" name="protein" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dinner-fat">脂質:</label>
+                        <input type="text" id="dinner-fat" name="fat" required>
+                    </div>
+                    <input type="hidden" name="mealType" value="dinner">
+                    <button type="submit" class="btn-primary">登録</button>
+                </form>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 食事情報登録サイト</p>
+    </footer>
+    <script src="{{ url_for('static', filename='Detection/detection.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィットレ - ログイン</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='HBstyles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>フィットレ</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('HB_page') }}#home">ホーム</a></li>
+                    <li><a href="{{ url_for('service_page') }}">サービス</a></li>
+                    <li><a href="{{ url_for('contact_page') }}">お問い合わせ</a></li>
+                    <li><a href="{{ url_for('login_page') }}">ログイン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="login">
+            <div class="container">
+                <h2>ログイン</h2>
+                <form id="login-form">
+                    <label for="email">メールアドレス:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">パスワード:</label>
+                    <input type="password" id="password" name="password" required>
+                    <input type="submit" value="ログイン">
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='scripts/login.js') }}"></script>
+</body>
+</html>

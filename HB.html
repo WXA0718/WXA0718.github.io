@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィットレ - 健康管理ポータル</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='HBstyles.css') }}">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="splash">
+        <div id="splash_logo">
+            <img src="{{ url_for('static', filename='images/fitre.png') }}" alt="Loading" class="fadeUp">
+        </div>
+    </div>            
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>フィットレ</h1>      
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="HB#home">ホーム</a></li>
+                    <li><a href="{{ url_for('service_page') }}">サービス</a></li>
+                    <li><a href="{{ url_for('contact_page') }}">お問い合わせ</a></li>
+                    <li><a href="{{ url_for('recruitment_page') }}">採用情報</a></li>
+                    <li><a href="{{ url_for('login_page') }}">ログイン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <div class="container">
+                    <h1>フィットレで健康を管理しよう</h1>
+                    <p>体重、脂肪率などの体成分を一元管理し、健康的な生活をサポートします。</p>
+                    <a href="#features" class="btn-primary" id="more-btn">もっと見る</a>
+                </div>
+            </div>
+        </section>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>フィットレについて</h2>
+                <p>フィットレは、日本の人々を健康にすることを目標に掲げ、企業が従業員の健康に投資することで企業価値を向上させることを目指しています。</p>
+                <p>健康経営とは、会社全体で従業員の健康づくりに取り組むことです。運動習慣をつけるために社員全体でラジオ体操やヨガを行ったり、社員食堂のメニューを栄養価やバランスに配慮したものに変更したり、メンタル不調者の発生を未然に防ぐための定期的なカウンセリングを実施したりします。</p>
+                <p>健康経営優良法人は、特に優れた健康経営を実践している企業を「見える化」する制度です。この認定を受けることで、企業はホワイト企業としての信頼性を高めることができます。</p>
+            </div>
+        </section>
+        <section id="services" class="services">
+            <div class="container">
+                <h2>サービス概要</h2>
+                <p>私たちの会社は、健康経営優良法人の基準を満たすためのWebサービスを提供しています。具体的には以下のようなサービスを展開しています:</p>
+                <ul>
+                    <li>食事・トレーニング管理: ユーザーが食事を写真で記録し、カロリー計算を行い、個々に適したエクササイズを提供します。</li>
+                    <li>社内イベントの開催: 定期的にイベントを開催し、従業員がゲーム感覚で運動を楽しむことで、競争心とチャレンジ精神を促進します。</li>
+                    <li>アンケートの実施: 社内でアンケートを実施し、従業員のメンタルや健康状態を管理し、悩みを解決するサポートを行います。</li>
+                </ul>
+            </div>
+        </section>
+        <section id="features" class="features">
+            <div class="container">
+                <h2>特徴</h2>
+                <div class="feature-cards">
+                    <div class="feature-card fade-in">
+                        <img src="{{ url_for('static', filename='images/feature1.jpg') }}" alt="体重管理">
+                        <h3>体重管理</h3>
+                        <p>毎日の体重を記録し、変化をグラフで確認できます。</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <img src="{{ url_for('static', filename='images/feature2.jpg') }}" alt="脂肪率管理">
+                        <h3>脂肪率管理</h3>
+                        <p>脂肪率を測定し、健康状態を可視化します。</p>
+                    </div>
+                    <div class="feature-card fade-in">
+                        <img src="{{ url_for('static', filename='images/feature3.jpg') }}" alt="栄養管理">
+                        <h3>栄養管理</h3>
+                        <p>食事の内容を記録し、栄養バランスをチェックできます。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="team" class="team">
+            <div class="container">
+                <h2>私たちのチーム</h2>
+                <p>最高なサービスを提供します</p>
+                <div class="team-cards">
+                    <div class="team-card fade-in">
+                        <img src="{{ url_for('static', filename='images/IMG_8016.jpeg') }}" alt="WANG Allen">
+                        <h3>WANG XIANGAO</h3>
+                        <p>CEO</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <img src="{{ url_for('static', filename='images/IMG_8002.jpeg') }}" alt="安達 一陽">
+                        <h3>安達 一陽</h3>
+                        <p>Vice President</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <img src="{{ url_for('static', filename='images/IMG_8003.jpeg') }}" alt="小澤 瑠奈">
+                        <h3>小澤 瑠奈</h3>
+                        <p>CFO</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <img src="{{ url_for('static', filename='images/IMG_8001.jpeg') }}" alt="奈良 智司">
+                        <h3>奈良 智司</h3>
+                        <p>COO</p>
+                    </div>
+                    <div class="team-card fade-in">
+                        <img src="{{ url_for('static', filename='images/IMG_8020.jpeg') }}" alt="藤本 一馬">
+                        <h3>藤本 一馬</h3>
+                        <p>Vice President</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="achievements" class="achievements">
+            <div class="container">
+                <h2>信頼の実績</h2>
+                <p>私たちの成果を数字でご覧ください。</p>
+                <div class="achievement-cards">
+                    <div class="achievement-card">
+                        <h3>1,000+</h3>
+                        <p>サポートしたプロジェクト</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>500+</h3>
+                        <p>満足したクライアント</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>50+</h3>
+                        <p>受賞歴</p>
+                    </div>
+                    <div class="achievement-card">
+                        <h3>30+</h3>
+                        <p>チームメンバー</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="reviews" class="reviews">
+            <div class="container">
+                <h2>ユーザーレビュー</h2>
+                <div class="review fade-in" id="review1">
+                    <img src="{{ url_for('static', filename='images/user1.jpg') }}" alt="ユーザー1">
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
+                        <p>株式会社フィットレのサポートで、健康的な生活を手に入れることができました。</p>
+                        <p><strong>佐々木 花</strong><br>2024年3月14日</p>
+                    </div>
+                </div>
+                <div class="review fade-in" id="review2">
+                    <img src="{{ url_for('static', filename='images/user2.jpg') }}" alt="ユーザー2">
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
+                        <p>プロフェッショナルなチームによる素晴らしいサポート。</p>
+                        <p><strong>山本 一郎</strong><br>2024年1月28日</p>
+                    </div>
+                </div>
+                <div class="review fade-in" id="review3">
+                    <img src="{{ url_for('static', filename='images/user3.jpg') }}" alt="ユーザー3">
+                    <div class="review-content">
+                        <div class="review-stars">★★★★★</div>
+                        <p>フィットレのサービスを利用して、毎日の運動が楽しくなりました。これからも続けたいと思います。</p>
+                        <p><strong>田中 花子</strong><br>2024年5月5日</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        
+        <section id="swot" class="swot">
+            <div class="container">
+                <h2>SWOT分析</h2>
+                <p>フィットレのSWOT分析を以下に示します：</p>
+                <ul>
+                    <li><strong>強み:</strong> 他社にはない独自のサービスを提供し、健康経営優良法人の基準をすべて満たすことができる点。</li>
+                    <li><strong>弱み:</strong> 契約月の差が激しいこと、資金の都合上広告が出せないこと、競合他社が多く低価格でサービスを提供している企業があること。</li>
+                    <li><strong>機会:</strong> 健康経営の重要性が高まる中で、多くの企業がこの分野への投資を検討していること。AIやチャットボットなどの先進技術を導入することで、サービスの付加価値を高められること。</li>
+                    <li><strong>脅威:</strong> 競合他社が多く、市場シェアを奪われるリスクがあること。</li>
+                </ul>
+            </div>
+        </section>
+        <section id="future" class="future">
+            <div class="container">
+                <h2>将来の展望</h2>
+                <p>認定要件の変化に対応し、医師との連携や申請代行・コンサルティングサービスの提供を強化していく計画です。また、個人向けの開発や海外市場への展開も視野に入れています。</p>
+                <p>将来的には、日本の健康を会社からという目的を掲げ、さらに世界の人々を健康にすることを目指しています。</p>
+            </div>
+        </section>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>お問い合わせ</h2>
+                <p>株式会社フィットレへのお問い合わせ方法をご案内します。お気軽にご連絡ください。</p>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <img src="{{ url_for('static', filename='images/電話.jpeg') }}" alt="電話">
+                    </div>
+                    <div class="contact-info">
+                        <h3>電話でのお問い合わせ</h3>
+                        <p>お電話でのご質問やご相談はこちらからどうぞ。</p>
+                        <a href="tel:+1234567890">電話する →</a>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <img src="{{ url_for('static', filename='images/メール.jpeg') }}" alt="メール">
+                    </div>
+                    <div class="contact-info">
+                        <h3>メールでのお問い合わせ</h3>
+                        <p>メールでのご質問やご相談はこちらからどうぞ。</p>
+                        <a href="{{ url_for('contact_page') }}">メールを送る →</a>
+                    </div>
+                </div>
+            </div>
+        </section>        
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#home">ホーム</a>
+                <a href="{{ url_for('service_page') }}">サービス</a>
+                <a href="{{ url_for('contact_page') }}">お問い合わせ</a>
+                <a href="{{ url_for('login_page') }}">ログイン</a>
+            </div>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+    <p id="page-top"><a href="#"><img src="{{ url_for('static', filename='images/fei.webp') }}" alt="Page Top"></a></p>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サービス概要 - フィットレ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='HBstyles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>フィットレ</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('HB_page') }}">ホーム</a></li>
+                    <li><a href="{{ url_for('service_page') }}">サービス</a></li>
+                    <li><a href="{{ url_for('contact_page') }}">お問い合わせ</a></li>
+                    <li><a href="{{ url_for('login_page') }}">ログイン</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="services" class="services1">
+        <div class="service-header">
+            <h1>サービス概要</h1>
+            <p>株式会社フィットレのサービスページへようこそ。体重管理、脂肪率管理、栄養管理を提供します。</p>
+            <div class="service-stats">
+                <div class="stat-item">
+                    <h2>高</h2>
+                    <p>信頼性</p>
+                </div>
+                <div class="stat-item">
+                    <h2>90%</h2>
+                    <p>顧客満足度</p>
+                </div>
+                <div class="stat-item">
+                    <h2>2024</h2>
+                    <p>サービス開始年</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="service-details">
+      <div class="container">
+          <div class="service-details-content">
+              <div class="service-content">
+                  <h2>健康管理の重要性</h2>
+                  <p>フィットレでは、あなたの健康を第一に考えたサービスを提供しています。体重、脂肪率、栄養管理を通じて、健康的な生活をサポートします。</p>
+                  <a href="{{ url_for('static', filename='images/プレゼン.pdf') }}" class="btn-primary">サービス詳細</a>
+              </div>
+              <div class="service-image">
+                  <img src="{{ url_for('static', filename='images/sarada.jpg') }}" alt="健康管理の重要性">
+              </div>
+              <div class="service-stat-box">
+                  <div class="stat-box-content">
+                      <span class="icon">❤️</span>
+                      <h3>1,500+</h3>
+                      <p>満足した顧客</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>  
+
+  <section id="pricing" class="pricing">
+    <div class="container">
+        <h2 class="section-title">料金プラン</h2>
+        <p class="section-subtitle">あなたのニーズに合わせた柔軟なプランを選択できます。いつでもアップグレード、ダウングレード、キャンセルが可能です。</p>
+        <div class="pricing-plans">
+            <div class="plan basic">
+                <h3>ベーシック</h3>
+                <p class="price">¥500<span>/month</span></p>
+                <a href="#" class="btn-primary">プランを購入</a>
+                <ul class="features">
+                    <li>カスタムドメイン <span>✔</span></li>
+                    <li>優先サポート <span>✖</span></li>
+                    <li>高度なセキュリティ <span>✖</span></li>
+                    <li>訪問者インサイト <span>✔</span></li>
+                    <li>コンバージョントラッキング <span>✖</span></li>
+                    <li>カスタムレポート <span>✖</span></li>
+                    <li>リアルタイムデータ <span>✖</span></li>
+                    <li>24/7メールサポート <span>✔</span></li>
+                    <li>専任アカウントマネージャー <span>✖</span></li>
+                    <li>オンボーディング＆トレーニング <span>✖</span></li>
+                    <li>SLA保証 <span>✖</span></li>
+                </ul>
+            </div>
+            <div class="plan professional">
+                <h3>プロフェッショナル</h3>
+                <p class="price">¥1,980<span>/month</span></p>
+                <a href="#" class="btn-primary">プランを購入</a>
+                <ul class="features">
+                    <li>カスタムドメイン <span>✔</span></li>
+                    <li>優先サポート <span>✔</span></li>
+                    <li>高度なセキュリティ <span>✔</span></li>
+                    <li>訪問者インサイト <span>✔</span></li>
+                    <li>コンバージョントラッキング <span>✔</span></li>
+                    <li>カスタムレポート <span>✖</span></li>
+                    <li>リアルタイムデータ <span>✖</span></li>
+                    <li>24/7メールサポート <span>✔</span></li>
+                    <li>専任アカウントマネージャー <span>✔</span></li>
+                    <li>オンボーディング＆トレーニング <span>✖</span></li>
+                    <li>SLA保証 <span>✖</span></li>
+                </ul>
+            </div>
+            <div class="plan enterprise">
+                <h3>エンタープライズ</h3>
+                <p class="price">¥4,980<span>/month</span></p>
+                <a href="#" class="btn-primary">プランを購入</a>
+                <ul class="features">
+                    <li>カスタムドメイン <span>✔</span></li>
+                    <li>優先サポート <span>✔</span></li>
+                    <li>高度なセキュリティ <span>✔</span></li>
+                    <li>訪問者インサイト <span>✔</span></li>
+                    <li>コンバージョントラッキング <span>✔</span></li>
+                    <li>カスタムレポート <span>✔</span></li>
+                    <li>リアルタイムデータ <span>✔</span></li>
+                    <li>24/7メールサポート <span>✔</span></li>
+                    <li>専任アカウントマネージャー <span>✔</span></li>
+                    <li>オンボーディング＆トレーニング <span>✔</span></li>
+                    <li>SLA保証 <span>✔</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section id="process" class="process">
+    <div class="container">
+        <h2 class="section-title">サービス利用の流れ</h2>
+        <p class="section-subtitle">フィットレのサービスを利用するための簡単なステップをご紹介します。</p>
+        <div class="process-steps">
+            <div class="step">
+                <div class="step-icon">
+                    <img src="{{ url_for('static', filename='images/マッチョ.jpeg') }}" alt="登録">
+                </div>
+                <h3>登録</h3>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="{{ url_for('static', filename='images/ハート.jpeg') }}" alt="健康状態の確認">
+                </div>
+                <h3>健康状態の確認</h3>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="{{ url_for('static', filename='images/フォークとナイフ.jpeg') }}" alt="栄養プランの作成">
+                </div>
+                <h3>栄養プランの作成</h3>
+            </div>
+            <div class="step">
+                <div class="step-icon">
+                    <img src="{{ url_for('static', filename='images/グラフ.jpeg') }}" alt="進捗のモニタリング">
+                </div>
+                <h3>進捗のモニタリング</h3>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <footer>
+      <div class="container">
+        <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+          <div class="footer-links">
+            <li><a href="{{ url_for('index') }}">ホーム</a></li>
+            <li><a href="{{ url_for('service_page') }}">サービス</a></li>
+            <li><a href="{{ url_for('contact_page') }}">お問い合わせ</a></li>
+            <li><a href="{{ url_for('login_page') }}">ログイン</a></li>
+          </div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+</body>
+</html>

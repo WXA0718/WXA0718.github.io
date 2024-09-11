@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- ヘッター -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィットレ - マイページ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<!-- ボデイー -->
+<body>
+    <!-- 一番上 -->
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="{{ url_for('HB_page') }}" style="color: inherit; text-decoration: none;">フィットレ</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('HB_page') }}">ホーム</a></li>
+                <li><a href="{{ url_for('index') }}">マイページ</a></li>
+                <li><a href="{{ url_for('login_page') }}">ログアウト</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- 横 -->
+    <div class="container">
+        <aside class="sidebar">
+            <div class="profile">
+                <img id="profile-image" src="{{ url_for('static', filename='images/Sample_Image.png') }}" alt="フィットレ 太郎">
+                <h3 id="profile-name">フィットレ 太郎</h3>
+            </div>
+            <ul class="sidebar-links">
+                <li><a href="#dashboard">ダッシュボード</a></li>
+                <li><a href="#weight">体重管理</a></li>
+                <li><a href="#body-fat">脂肪率管理</a></li>
+                <li><a href="#nutrition">栄養管理</a></li>
+                <li><a href="{{ url_for('input_page') }}">データ入力</a></li>
+                <li><a href="{{ url_for('detection_page') }}">食事入力</a></li>
+                <li><a href="{{ url_for('history_page') }}">食事履歴</a></li>
+                <li><a href="#settings">設定</a></li>
+            </ul>
+        </aside>
+        <!-- ダッシュボード -->
+        <main class="main-content">
+            <section id="dashboard">
+                <h2>ダッシュボード</h2>
+                <div class="dashboard-overview">
+                    <div class="dashboard-card">
+                        <h3>今日の体重</h3>
+                        <p id="current-weight"></p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>今日の脂肪率</h3>
+                        <p id="current-body-fat"></p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>今日の摂取カロリー</h3>
+                        <p id="current-calories"></p>
+                    </div>
+                </div>
+                <canvas id="summary-chart"></canvas>
+            </section>
+            <section id="weight">
+                <h2>体重管理</h2>
+                <canvas id="weight-chart"></canvas>
+            </section>
+            <section id="body-fat">
+                <h2>脂肪率管理</h2>
+                <canvas id="body-fat-chart"></canvas>
+            </section>
+            <section id="nutrition">
+                <h2>栄養管理</h2>
+                <canvas id="calorie-chart"></canvas>
+            </section>
+            <!-- 設定 -->
+            <section id="settings">
+                <h2>設定 <button id="settings-toggle">▼</button></h2>
+                <div id="settings-content" style="display: none;">
+                    <form id="settings-form">
+                        <div class="form-group">
+                            <label for="profileImage">プロフィール画像を変更:</label>
+                            <input type="file" id="profileImage" name="profileImage">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">名前を変更:</label>
+                            <input type="text" id="username" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">パスワードを変更:</label>
+                            <input type="password" id="password" name="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="basicInfo">基本情報を変更:</label>
+                            <textarea id="basicInfo" name="basicInfo" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">保存</button>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+    </footer>
+    <script src="{{ url_for('static', filename='scripts/main2.js') }}"></script>
+    <script src="{{ url_for('static', filename='scripts/settings.js') }}"></script>
+</body>
+</html>

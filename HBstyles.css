@@ -1,0 +1,871 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color:#f0f8ff
+}
+    
+header {
+    background-color: #1e90ff;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+    
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+    
+.logo h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+    
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0;
+}
+    
+.nav-links li {
+    margin: 0;
+}
+    
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+    
+.nav-links a {
+    background-color: #1e90ff;
+    border-radius: 5px;
+}
+    
+.hero {
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を少し暗くして文字を見やすくする */
+    background-blend-mode: darken;
+}
+    
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* テキストシャドウを追加して文字を見やすくする */
+}
+    
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* テキストシャドウを追加して文字を見やすくする */
+}
+    
+.btn-primary {
+    background-color: #1e90ff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+    
+.btn-primary {
+    background-color: #1e90ff;
+}
+    
+.about, .features, .contact {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+    
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+    
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* 中央揃えに変更 */
+    gap: 2rem;
+}
+    
+.feature-card {
+    background-color: white;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 calc(33% - 2rem); /* 三つ並べて表示するためのサイズ調整 /
+    max-width: calc(33% - 2rem);
+    display: flex;
+    flex-direction: column; / 画像とテキストを縦に並べる /
+    align-items: center; / 中央揃え /
+    margin: 1rem; / カードの周りにスペースを追加 */
+}
+    
+.feature-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    max-height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem; /* テキストと画像の間にスペースを追加 */
+}
+    
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+    
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+    
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    
+.contact label {
+    text-align: left;
+}
+    
+.contact input, .contact textarea {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+    
+footer {
+    background-color: #1e90ff;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+}
+    
+    /* ログインセクションのスタイルを追加 */
+.login {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+    
+.login form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+    
+.login label {
+    text-align: left;
+}
+    
+.login input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+    
+/* 既存スタイルの上に追加 */
+
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* 背景を少し暗くして文字を見やすくする */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1, .hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.features {
+    background-color: #eef2f7;
+    padding: 4rem 1rem;
+}
+
+.feature-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.swot {
+    background-color: #f9fafc;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.swot ul {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.swot li {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.future {
+    background-color: #eef2f7;
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.future p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ffdd57;
+}
+
+/* メディアクエリでレスポンシブデザインを強化 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .feature-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+/* ログインセクションのスタイルを追加 */
+.login {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.login form {
+    max-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.login label {
+    text-align: left;
+}
+
+.login input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.services {
+    text-align: center;
+}
+
+.services-list {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.team {
+    background-color: #f0f8ff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.team .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.team h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.team p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+}
+
+.team-card img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.team-card h3 {
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+}
+
+.team-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.achievements {
+    background-color: #f0f8ff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.achievements .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.achievements h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.achievements p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+.achievement-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.achievement-card {
+    background: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+
+.achievement-card h3 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    font-size: 1em;
+    color: #666;
+}
+
+.reviews {
+    background-color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.reviews .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.reviews h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.review img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.review-content {
+    background: #f9fafc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.review-stars {
+    color: #ffdd57;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.review-content p {
+    margin: 0;
+}
+
+.review-content strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.fade-in.visible {
+    opacity: 1;
+}
+
+
+/* Loading背景画面設定 */
+#splash {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background:#fff;
+    text-align: center;
+    color: #fff;
+}
+
+/* Loading画像中央配置 */
+#splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定 */
+#splash_logo img {
+    width: 700px;
+}
+
+/* fadeUpをするアイコンの動き */
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact {
+    padding: 4rem 1rem;
+    text-align: center;
+    background-color: #f0f8ff; /* 背景色を追加（オプション） */
+}
+
+.contact-method {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央寄せ */
+    margin-bottom: 2rem;
+    text-align: left; /* テキストの左寄せを維持 */
+}
+
+.contact-icon img {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.contact-info {
+    max-width: 600px; /* テキスト部分の最大幅を設定 */
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+.contact-info a {
+    color: #1e90ff;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block; /* テキストリンクのクリック範囲を増やすため */
+    margin-top: 0.5rem; /* 上下のスペースを調整 */
+}
+
+/*リンクを右下に固定*/
+#page-top {
+    position: fixed;
+    right: 10px;
+    bottom: 30px;
+    z-index: 2;
+    /*はじめは非表示*/
+    opacity: 0;
+    transform: translateY(150px);
+    transition: all 0.5s ease-in-out;
+}
+
+/*　上に上がる動き　*/
+#page-top.UpMove {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*　下に下がる動き　*/
+#page-top.DownMove {
+    opacity: 0;
+    transform: translateY(150px);
+}
+
+/*画像のスタイル*/
+#page-top img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* サービス概要セクションのスタイル */
+.services1 {
+    position: relative;
+    padding: 4rem 1rem;
+    background: url('images/training.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: left;
+}
+
+.service-header {
+    max-width: 2000px;
+    max-height: 2000px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color:rgba(0, 0, 0, 0.8); /* 背景を少し暗くして文字を見やすくする */
+    border-radius: 10px;
+    height: 280px; /* 高さを調整 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-header p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.service-stats {
+    display: flex;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-item p {
+    font-size: 1rem;
+}
+
+/* サービス詳細セクションのスタイル */
+.service-details {
+    padding: 4rem 1rem;
+    text-align: left;
+    background-color:bisque;
+}
+
+.service-details-content {
+    display: flex;
+    justify-content: space-between; /* 子要素を左右に配置 */
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap; /* 画面サイズが小さい場合に要素を折り返す */
+}
+
+.service-content {
+    max-width: 600px;
+}
+
+.service-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-content .btn-primary {
+    background-color: #1e90ff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.service-content .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.service-image, .service-stat-box {
+    flex: 1; /* 各要素を均等に配置 */
+}
+
+.service-image img {
+    max-width: 100%; /* 画像の最大幅を設定 */
+    height: auto;
+    border-radius: 10px;
+}
+
+.service-stat-box {
+    background-color: #d3e5ff;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 100px;
+}
+
+.service-stat-box .stat-box-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.service-stat-box .icon {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-stat-box h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-stat-box p {
+    font-size: 1rem;
+}
+
+/* 料金プランセクションのスタイル */
+.pricing {
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.pricing-plans {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.plan {
+    background-color: #f0f8ff;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plan h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.plan .price {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.plan .price span {
+    font-size: 1rem;
+}
+
+.plan .btn-primary {
+    background-color: #1e90ff;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.plan .btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.plan .features {
+    list-style: none;
+    padding: 0;
+}
+
+.plan .features li {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.plan .features span {
+    float: right;
+}
+
+/* プロフェッショナルプランのスタイル */
+.plan.professional {
+    background-color: #e6f7ff;
+    border: 2px solid #1e90ff;
+}
+
+/* サービス利用の流れセクションのスタイル */
+.process {
+    padding: 4rem 1rem;
+    background-color: #f8f9fa; /* 任意の色に変更 */
+    text-align: center;
+}
+
+.process .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.process .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.step {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.step-icon {
+    margin-bottom: 1rem;
+}
+
+.step-icon img {
+    width: 40px; /* アイコンのサイズを調整 */
+    height: 40px; /* アイコンのサイズを調整 */
+}
+
+.step h3 {
+    font-size: 1.2rem;
+}

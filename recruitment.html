@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>採用情報 - フィットレ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='scripts/recruitment.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">フィットレ</div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('index') }}">ホーム</a></li>
+                <li><a href="{{ url_for('service_page') }}">サービス</a></li>
+                <li><a href="{{ url_for('contact_page') }}">お問い合わせ</a></li>
+                <li><a href="{{ url_for('recruitment_page') }}">採用情報</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main>
+            <h1>採用情報</h1>
+            <div class="tabs">
+                <button class="tab-link" onclick="openTab(event, 'Sales')">営業職</button>
+                <button class="tab-link" onclick="openTab(event, 'Trainer')">パーソナルトレーナー</button>
+                <button class="tab-link" onclick="openTab(event, 'Designer')">Webデザイナー</button>
+                <button class="tab-link" onclick="openTab(event, 'General')">総合職</button>
+                <button class="tab-link" onclick="openTab(event, 'Backend')">バックエンドエンジニア</button>
+                <button class="tab-link" onclick="openTab(event, 'Manager')">プロジェクトマネージャー</button>
+            </div>
+
+            <div id="Sales" class="tab-content">
+                <h2>営業職の募集要項</h2>
+                <p>新規顧客の開拓および既存顧客とのリレーションシップの維持管理。</p>
+                <ul>
+                    <li>必要スキル：B2Bセールス経験、交渉力、CRMソフトウェア経験</li>
+                    <li>給与：月給30万円〜 + インセンティブ</li>
+                    <li>福利厚生：社会保険完備、交通費全額支給、健康診断、フィットネスクラブ法人会員</li>
+                </ul>
+            </div>
+
+            <div id="Trainer" class="tab-content" style="display:none;">
+                <h2>パーソナルトレーナーの募集要項</h2>
+                <p>クライアント一人ひとりに合わせたパーソナライズされたトレーニングプランの作成。</p>
+                <ul>
+                    <li>必要スキル：パーソナルトレーニング認定資格、コミュニケーションスキル</li>
+                    <li>給与：月給25万円〜 + 成果に応じたボーナス</li>
+                    <li>福利厚生：社会保険完備、健康診断、継続教育支援</li>
+                </ul>
+            </div>
+
+            <div id="Designer" class="tab-content" style="display:none;">
+                <h2>Webデザイナーの募集要項</h2>
+                <p>企業のウェブサイト及び関連するデジタル資材のデザインと開発。</p>
+                <ul>
+                    <li>必要スキル：HTML、CSS、JavaScript、Adobe Creative Suite経験</li>
+                    <li>給与：月給28万円〜 + プロジェクト完了ボーナス</li>
+                    <li>福利厚生：社会保険完備、リモートワークオプション、自己啓発のための資金支援</li>
+                </ul>
+            </div>
+
+            <div id="General" class="tab-content" style="display:none;">
+                <h2>総合職の募集要項</h2>
+                <p>企業のさまざまな部署での業務を適応的に行います。</p>
+                <ul>
+                    <li>必要スキル：マルチタスキング能力、優れたコミュニケーションスキル</li>
+                    <li>給与：月給28万円〜</li>
+                    <li>福利厚生：社会保険完備、交通費支給、健康診断</li>
+                </ul>
+            </div>
+
+            <div id="Backend" class="tab-content" style="display:none;">
+                <h2>バックエンドエンジニアの募集要項</h2>
+                <p>サーバーサイドのロジックとデータベース管理を担当します。</p>
+                <ul>
+                    <li>必要スキル：Python、Java、データベース管理</li>
+                    <li>給与：月給35万円〜</li>
+                    <li>福利厚生：社会保険完備、フレキシブルワーキング、リモートワーク可能</li>
+                </ul>
+            </div>
+
+            <div id="Manager" class="tab-content" style="display:none;">
+                <h2>プロジェクトマネージャーの募集要項</h2>
+                <p>複数のプロジェクトの計画、実行、監視を行います。</p>
+                <ul>
+                    <li>必要スキル：プロジェクト管理、リーダーシップ、対人スキル</li>
+                    <li>給与：月給40万円〜</li>
+                    <li>福利厚生：社会保険完備、パフォーマンスボーナス、キャリア開発支援</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <!-- 福利厚生セクション -->
+    <section class="welfare-section">
+        <h2>福利厚生</h2>
+        <p>フィットレでは、従業員の健康と福祉を重視しています。以下の福利厚生を提供しています：</p>
+        <ul>
+            <li>健康保険、厚生年金保険、雇用保険、労災保険</li>
+            <li>育児支援制度（育児休業、時短勤務制度など）</li>
+            <li>健康診断と人間ドックの完全補助</li>
+            <li>通勤交通費の支給</li>
+            <li>リフレッシュ休暇、特別休暇</li>
+            <li>社内研修制度および資格取得支援</li>
+            <li>リモートワークオプション</li>
+            <li>フレキシブルワーキングアワーズ</li>
+            <li>エンプロイーリカレーションパッケージ</li>
+            <li>ヘルスアンドウェルネスプログラム</li>
+            <li>教育とキャリア開発の支援</li>
+            <li>パフォーマンスベースのボーナス</li>
+            <li>年次総会や社内イベント</li>
+        </ul>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">プライバシーポリシー</a></li>
+                <li><a href="#">利用規約</a></li>
+            </ul>
+            <ul class="social-links">
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

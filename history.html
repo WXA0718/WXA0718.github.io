@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>フィットレ - 食事履歴</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='history.css') }}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>フィットレ</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('index') }}">ホーム</a></li>
+                    <li><a href="{{ url_for('login_page') }}">ログイン</a></li>
+                    <li><a href="{{ url_for('detection_page') }}">食事登録</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2>食事履歴</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>日付</th>
+                        <th>食事の種類</th>
+                        <th>説明</th>
+                        <th>カロリー</th>
+                        <th>タンパク質</th>
+                        <th>脂肪</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for date, meals in data.items() %}
+                        {% for meal_type, details in meals.items() %}
+                            <tr>
+                                <td>{{ date }}</td>
+                                <td>{{ meal_type }}</td>
+                                <td>{{ details.description }}</td>
+                                <td>{{ details.calories }}</td>
+                                <td>{{ details.protein }}</td>
+                                <td>{{ details.fat }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 フィットレ. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
